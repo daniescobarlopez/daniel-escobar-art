@@ -6,7 +6,7 @@ import {
   getAllBlogSlugs,
 } from "@/lib/blog-posts"
 import { BlogPost } from "@/components/blog-post"
-import { GiscusComments } from "@/components/giscus-comments"
+import CusdisComments from "@/components/CusdisComments"
 
 function getPostTitle(text: string): string {
   return text.split("\n")[0].trim() || "Entrada sin título"
@@ -60,7 +60,7 @@ export default async function BlogPostPage({
         <div className="mx-auto max-w-3xl px-6 lg:px-12">
           <BlogPost image={post.image} text={post.text} date={post.date} />
           <div className="mt-16">
-            <GiscusComments />
+            <CusdisComments />
           </div>
         </div>
       </div>
