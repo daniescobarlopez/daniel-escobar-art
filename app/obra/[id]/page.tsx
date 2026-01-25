@@ -36,7 +36,7 @@ const artworks: Artwork[] = [
     description: "El vértigo de la arquitectura que desafía la gravedad, suspendida sobre el abismo.",
     fullDescription: "Inspirada en las famosas Casas Colgadas de Cuenca, esta obra explora la relación entre la arquitectura humana y el paisaje natural. Las construcciones parecen desafiar las leyes de la física, aferrándose al precipicio con una determinación que habla de la audacia de quienes las construyeron. El carboncillo permite capturar la textura de la roca y la madera envejecida.",
     image: "/MISIMAGENES/casas-colgantes.jpg",
-    year: "2024",
+    year: "2025",
     technique: "Carboncillo sobre papel",
     dimensions: "60 × 80 cm",
     availabilityText: "Obra disponible"
@@ -47,7 +47,7 @@ const artworks: Artwork[] = [
     description: "Perfil sereno que captura la esencia de la contemplación y la belleza silenciosa.",
     fullDescription: "Este retrato de perfil busca capturar no solo los rasgos físicos, sino el mundo interior de la persona retratada. La mirada perdida en el horizonte sugiere pensamientos profundos y una serenidad que solo se alcanza en momentos de verdadera introspección. El trabajo de luces y sombras en el cabello y los rasgos faciales crea una atmósfera íntima y contemplativa.",
     image: "/MISIMAGENES/maria.jpg",
-    year: "2024",
+    year: "2025",
     technique: "Carboncillo sobre papel",
     dimensions: "40 × 50 cm",
     availabilityText: "Obra no disponible"
@@ -58,7 +58,7 @@ const artworks: Artwork[] = [
     description: "Exploración anatómica donde las manos revelan la tensión y la vulnerabilidad del cuerpo.",
     fullDescription: "Este estudio de figura explora la anatomía humana a través de la técnica sanguina, capturando la tensión muscular y la delicadeza de las manos en un gesto introspectivo. Los tonos cálidos del papel y los pigmentos rojizos crean una atmósfera íntima que evoca los estudios clásicos del Renacimiento. La composición fragmentada invita al espectador a completar mentalmente la figura, participando activamente en la obra.",
     image: "/MISIMAGENES/figura-estudio.jpg",
-    year: "2024",
+    year: "2025",
     technique: "Sanguina y tiza blanca sobre papel",
     dimensions: "50 × 65 cm",
     availabilityText: "Obra no disponible"
@@ -69,7 +69,7 @@ const artworks: Artwork[] = [
     description: "Vista de tejados donde la arquitectura popular se encuentra con lo sagrado.",
     fullDescription: "Desde las alturas, los tejados de un pueblo castellano se convierten en un mar de texturas y formas geométricas. La torre de la iglesia emerge como punto focal, conectando lo terrenal con lo espiritual. El cielo dramático añade una dimensión casi teatral a la escena, mientras que el detalle minucioso de las tejas y ventanas revela la vida que bulle bajo cada techo.",
     image: "/MISIMAGENES/tejados-torre.jpg",
-    year: "2024",
+    year: "2025",
     technique: "Carboncillo sobre papel",
     dimensions: "50 × 70 cm",
     availabilityText: "Obra no disponible"
