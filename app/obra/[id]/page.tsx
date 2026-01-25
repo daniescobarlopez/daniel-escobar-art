@@ -58,7 +58,7 @@ const artworks: Artwork[] = [
     description: "Exploración anatómica donde las manos revelan la tensión y la vulnerabilidad del cuerpo.",
     fullDescription: "Este estudio de figura explora la anatomía humana a través de la técnica sanguina, capturando la tensión muscular y la delicadeza de las manos en un gesto introspectivo. Los tonos cálidos del papel y los pigmentos rojizos crean una atmósfera íntima que evoca los estudios clásicos del Renacimiento. La composición fragmentada invita al espectador a completar mentalmente la figura, participando activamente en la obra.",
     image: "/MISIMAGENES/figura-estudio.jpg",
-    year: "2025",
+    year: "2013",
     technique: "Sanguina y tiza blanca sobre papel",
     dimensions: "50 × 65 cm",
     availabilityText: "Obra no disponible"

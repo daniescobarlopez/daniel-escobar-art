@@ -26,28 +26,28 @@ const artworks: Artwork[] = [
     title: "Casas Colgantes",
     description: "El vértigo de la arquitectura que desafía la gravedad, suspendida sobre el abismo.",
     image: "/MISIMAGENES/casas-colgantes.jpg",
-    year: "2024"
+    year: "2025"
   },
   {
     id: "maria",
     title: "María",
     description: "Perfil sereno que captura la esencia de la contemplación y la belleza silenciosa.",
     image: "/MISIMAGENES/maria.jpg",
-    year: "2024"
+    year: "2025"
   },
   {
     id: "figura-estudio",
     title: "Estudio de Figura",
     description: "Exploración anatómica donde las manos revelan la tensión y la vulnerabilidad del cuerpo.",
     image: "/MISIMAGENES/figura-estudio.jpg",
-    year: "2024"
+    year: "2013"
   },
   {
     id: "tejados-torre",
     title: "Tejados y Torre",
     description: "Vista de tejados donde la arquitectura popular se encuentra con lo sagrado.",
     image: "/MISIMAGENES/tejados-torre.jpg",
-    year: "2024",
+    year: "2025",
     isLandscape: true
   },
   {
