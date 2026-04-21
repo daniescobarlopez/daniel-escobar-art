@@ -15,6 +15,13 @@ export interface Artwork {
 
 const artworks: Artwork[] = [
   {
+    id: "Catedral",
+    title: "Catedral de Santa María la Real de la Almudena",
+    description: "Volver al blanco y negro me está recordando algo importante: si el dibujo funciona, todo lo demás llega después.",
+    image: "/MISIMAGENES/Catedral.jpg",
+    year: "2026"
+  },
+  {
     id: "casa-balcon",
     title: "Casa con Balcón",
     description: "Arquitectura tradicional donde la luz y la sombra danzan sobre las fachadas de piedra.",
@@ -34,13 +41,6 @@ const artworks: Artwork[] = [
     description: "Perfil sereno que captura la esencia de la contemplación y la belleza silenciosa.",
     image: "/MISIMAGENES/maria.jpg",
     year: "2025"
-  },
-  {
-    id: "figura-estudio",
-    title: "Estudio de Figura",
-    description: "Exploración anatómica donde las manos revelan la tensión y la vulnerabilidad del cuerpo.",
-    image: "/MISIMAGENES/figura-estudio.jpg",
-    year: "2013"
   },
   {
     id: "tejados-torre",
@@ -65,6 +65,13 @@ const artworks: Artwork[] = [
     year: "2025",
     isLandscape: true
   },
+  {
+    id: "figura-estudio",
+    title: "Estudio de Figura",
+    description: "Exploración anatómica donde las manos revelan la tensión y la vulnerabilidad del cuerpo.",
+    image: "/MISIMAGENES/figura-estudio.jpg",
+    year: "2013"
+  }
 ]
 
 export function Gallery() {
@@ -100,14 +107,12 @@ export function Gallery() {
                     src={artwork.image || "/placeholder.svg"}
                     alt={artwork.title}
                     fill
-                    className={`object-cover transition-all duration-700 ${
-                      hoveredId === artwork.id ? "scale-105" : "scale-100"
-                    }`}
+                    className={`object-cover transition-all duration-700 ${hoveredId === artwork.id ? "scale-105" : "scale-100"
+                      }`}
                     unoptimized
                   />
-                  <div className={`absolute inset-0 bg-foreground/5 transition-opacity duration-500 ${
-                    hoveredId === artwork.id ? "opacity-0" : "opacity-100"
-                  }`} />
+                  <div className={`absolute inset-0 bg-foreground/5 transition-opacity duration-500 ${hoveredId === artwork.id ? "opacity-0" : "opacity-100"
+                    }`} />
                 </div>
 
                 {/* Artwork Info */}

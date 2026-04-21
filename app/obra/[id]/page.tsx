@@ -20,6 +20,18 @@ interface Artwork {
 
 const artworks: Artwork[] = [
   {
+    id: "Catedral",
+    title: "Catedral de Santa María la Real de la Almudena",
+    description: "Catedral de la Almudena",
+    fullDescription: "Antes de lanzarme al color estoy trabajando una serie de láminas a carboncillo para reforzar lo esencial: el encaje, las proporciones, la luz y las sombras.Volver al blanco y negro me está recordando algo importante: si el dibujo funciona, todo lo demás llega después.",
+    image: "/MISIMAGENES/Catedral.jpg",
+    year: "2026",
+    technique: "Carboncillo sobre papel",
+    dimensions: "100 × 70 cm",
+    availabilityText: "Obra disponible",
+    imageAspect: "landscape"
+  },
+  {
     id: "casa-balcon",
     title: "Casa con Balcón",
     description: "Arquitectura tradicional donde la luz y la sombra danzan sobre las fachadas de piedra.",
@@ -28,7 +40,7 @@ const artworks: Artwork[] = [
     year: "2025",
     technique: "Carboncillo sobre papel",
     dimensions: "50 × 70 cm",
-    availabilityText: "Obra no disponible"
+    availabilityText: "Obra disponible"
   },
   {
     id: "casas-colgantes",
@@ -38,7 +50,7 @@ const artworks: Artwork[] = [
     image: "/MISIMAGENES/casas-colgantes.jpg",
     year: "2025",
     technique: "Carboncillo sobre papel",
-    dimensions: "60 × 80 cm",
+    dimensions: "30 × 40 cm",
     availabilityText: "Obra disponible"
   },
   {
@@ -49,7 +61,7 @@ const artworks: Artwork[] = [
     image: "/MISIMAGENES/maria.jpg",
     year: "2025",
     technique: "Carboncillo sobre papel",
-    dimensions: "40 × 50 cm",
+    dimensions: "30 × 40 cm",
     availabilityText: "Obra no disponible"
   },
   {
@@ -72,7 +84,7 @@ const artworks: Artwork[] = [
     year: "2025",
     technique: "Carboncillo sobre papel",
     dimensions: "50 × 70 cm",
-    availabilityText: "Obra no disponible"
+    availabilityText: "Obra disponible"
   },
   {
     id: "abuelo",
@@ -82,8 +94,8 @@ const artworks: Artwork[] = [
     image: "/MISIMAGENES/abuelo.jpg",
     year: "2025",
     technique: "Carboncillo sobre papel",
-    dimensions: "45 × 60 cm",
-    availabilityText: "Obra disponible"
+    dimensions: "30 × 40 cm",
+    availabilityText: "Obra no disponible"
   },
   {
     id: "casas-piedra",
@@ -93,7 +105,7 @@ const artworks: Artwork[] = [
     image: "/MISIMAGENES/casas-piedra.jpg",
     year: "2025",
     technique: "Carboncillo sobre papel",
-    dimensions: "55 × 75 cm",
+    dimensions: "46 × 32 cm",
     availabilityText: "Obra disponible",
     imageAspect: "landscape"
   },
@@ -108,7 +120,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const artwork = artworks.find((a) => a.id === id)
-  
+
   if (!artwork) {
     return {
       title: "Obra no encontrada",
@@ -149,34 +161,40 @@ export default async function ArtworkPage({ params }: { params: Promise<{ id: st
       {/* Artwork Content */}
       <div className="pt-32 pb-24 lg:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             {/* Artwork Image */}
-            <div
-              className={`relative overflow-hidden bg-muted lg:sticky lg:top-32 ${
-                artwork.imageAspect === "landscape" ? "aspect-[16/10]" : "aspect-[4/5]"
-              }`}
-            >
-              <Image
-                src={artwork.image || "/placeholder.svg"}
-                alt={artwork.title}
-                fill
-                className={
-                  artwork.imageAspect === "landscape"
-                    ? "object-contain"
-                    : "object-cover"
-                }
-                priority
-                unoptimized
-              />
+            <div className={`relative w-full lg:col-span-6`}>
+              <div
+                className={`relative overflow-hidden lg:sticky lg:top-32 ${
+                  artwork.imageAspect === "landscape" ? "bg-transparent" : "bg-muted aspect-[4/5]"
+                }`}
+              >
+                {artwork.imageAspect === "landscape" ? (
+                  <img
+                    src={artwork.image || "/placeholder.svg"}
+                    alt={artwork.title}
+                    className="w-full h-auto block rounded-sm"
+                  />
+                ) : (
+                  <Image
+                    src={artwork.image || "/placeholder.svg"}
+                    alt={artwork.title}
+                    fill
+                    className="object-cover"
+                    priority
+                    unoptimized
+                  />
+                )}
+              </div>
             </div>
 
             {/* Artwork Info */}
-            <div className="space-y-8 lg:py-8">
+            <div className="lg:col-span-6 space-y-8 lg:py-8">
               <div>
                 <p className="text-sm tracking-widest uppercase text-muted-foreground mb-4">
                   {artwork.year}
                 </p>
-                
+
                 <p className="font-serif text-xl italic text-muted-foreground leading-relaxed">
                   {artwork.description}
                 </p>

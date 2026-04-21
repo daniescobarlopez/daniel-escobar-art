@@ -60,7 +60,7 @@ export default async function BlogPostPage({
         <div className="mx-auto max-w-3xl px-6 lg:px-12">
           <BlogPost image={post.image} text={post.text} date={post.date} />
           <div className="mt-16">
-            <CusdisComments />
+            <CusdisComments key={slug} />
           </div>
         </div>
       </div>
