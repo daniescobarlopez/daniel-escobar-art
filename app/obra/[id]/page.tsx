@@ -14,6 +14,8 @@ interface Artwork {
   dimensions: string
   /** Mensaje de disponibilidad (ej. "Obra no disponible", "Obra disponible", "Reservada"). */
   availabilityText: string
+  price?: string
+  originalPrice?: string
   /** "landscape" para imágenes horizontales (se ve completa); "portrait" por defecto. */
   imageAspect?: "portrait" | "landscape"
 }
@@ -29,18 +31,22 @@ const artworks: Artwork[] = [
     technique: "Carboncillo sobre papel",
     dimensions: "100 × 70 cm",
     availabilityText: "Obra disponible",
+    price: "125€",
+    originalPrice: "250€",
     imageAspect: "landscape"
   },
   {
     id: "casa-balcon",
-    title: "Casa con Balcón",
+    title: "Fachadas de priedra",
     description: "Arquitectura tradicional donde la luz y la sombra danzan sobre las fachadas de piedra.",
     fullDescription: "Esta obra captura la esencia de la arquitectura popular española, donde cada balcón cuenta una historia de vidas vividas. El carboncillo permite explorar los contrastes dramáticos entre la luz mediterránea y las sombras profundas que se proyectan sobre la piedra antigua. Los detalles arquitectónicos revelan el paso del tiempo y la belleza de lo cotidiano.",
     image: "/MISIMAGENES/casa-balcon.jpg",
     year: "2025",
     technique: "Carboncillo sobre papel",
     dimensions: "50 × 70 cm",
-    availabilityText: "Obra disponible"
+    availabilityText: "Obra disponible",
+    price: "75€",
+    originalPrice: "150€",
   },
   {
     id: "casas-colgantes",
@@ -51,7 +57,9 @@ const artworks: Artwork[] = [
     year: "2025",
     technique: "Carboncillo sobre papel",
     dimensions: "30 × 40 cm",
-    availabilityText: "Obra disponible"
+    availabilityText: "Obra disponible",
+    price: "75€",
+    originalPrice: "150€",
   },
   {
     id: "maria",
@@ -62,7 +70,8 @@ const artworks: Artwork[] = [
     year: "2025",
     technique: "Carboncillo sobre papel",
     dimensions: "30 × 40 cm",
-    availabilityText: "Obra no disponible"
+    availabilityText: "Obra no disponible",
+    price: "N/A"
   },
   {
     id: "figura-estudio",
@@ -73,7 +82,8 @@ const artworks: Artwork[] = [
     year: "2013",
     technique: "Sanguina y tiza blanca sobre papel",
     dimensions: "50 × 65 cm",
-    availabilityText: "Obra no disponible"
+    availabilityText: "Obra no disponible",
+    price: "N/A"
   },
   {
     id: "tejados-torre",
@@ -84,7 +94,9 @@ const artworks: Artwork[] = [
     year: "2025",
     technique: "Carboncillo sobre papel",
     dimensions: "50 × 70 cm",
-    availabilityText: "Obra disponible"
+    availabilityText: "Obra disponible",
+    price: "75€",
+    originalPrice: "150€"
   },
   {
     id: "abuelo",
@@ -95,11 +107,12 @@ const artworks: Artwork[] = [
     year: "2025",
     technique: "Carboncillo sobre papel",
     dimensions: "30 × 40 cm",
-    availabilityText: "Obra no disponible"
+    availabilityText: "Obra no disponible",
+    price: "N/A"
   },
   {
     id: "casas-piedra",
-    title: "Carracedo de Compludo",
+    title: "Una historia que contar.",
     description: "Una historia que contar.",
     fullDescription: "En lo más recóndito del interior de León está Carracedo de Compludo.\n16 habitantes.\n9 hombres.\n7 mujeres.\n\nNos levantamos temprano. A cuatro kilómetros del pueblo, siguiendo un sendero apenas transitado, cubierto de maleza tan alta como yo, llegamos a la cascada de Gualtón. Uno de esos lugares que no se explican, se sienten. Sabes que son mágicos nada más pisarlos.\n\nDe vuelta, María cae por un terraplén lleno de zarzas. Su cabeza queda a la altura de mis pies. La saco de ahí casi como si arrancara una mandrágora de la tierra. Tuve miedo. Mucho miedo.\nPor suerte, solo fue un susto.\n\nRecorremos el pueblo en silencio. No se oye nada.\nAl llegar a la última casa, un mastín ladra. Una chica, sentada junto a él, me sonríe y me saluda. Se la veía feliz. Con su perro. En su aldea. Muy feliz. Me acordé del mío. Le echo tanto de menos.\n\nVolvemos a la furgoneta, cocinamos algo y descansamos antes de continuar el viaje.\nEntonces vemos una familia: una pareja con su hija y dos personas mayores, los abuelos.\n\n—Tened buen viaje.\n—Gracias.\n—Avisad cuando lleguéis.\n—Vale, mamá.\n—Venid más a menudo, que veamos más a la niña.\n—Vale.\n\nDos besos. Se marchan.\n\nEl abuelo se gira hacia su mujer y le dice, casi en un susurro:\n—Ahí se va todo lo que tienes. Todo.\n\nElla no contesta.\nÉl repite:\n—Ahí se va todo lo que tienes. Todo. Ni casas, ni tierras, ni nada.\n\n—Ya lo sé… ya lo sé —responde ella.\n\nY el pueblo vuelve a quedarse en silencio.\n\nA veces el tiempo no avisa.\nSe lleva a la gente, las voces, las costumbres… incluso los lugares.\nPensamos que siempre habrá un \"luego\", un \"otro día\", un \"cuando tengamos tiempo\".\nPero hay cosas —la familia, las relaciones, las amistades, la memoria, los pueblos— que, si no se cuidan a tiempo, se van sin hacer ruido.",
     image: "/MISIMAGENES/casas-piedra.jpg",
@@ -107,6 +120,8 @@ const artworks: Artwork[] = [
     technique: "Carboncillo sobre papel",
     dimensions: "46 × 32 cm",
     availabilityText: "Obra disponible",
+    price: "50€",
+    originalPrice: "100€",
     imageAspect: "landscape"
   },
 ]
@@ -165,9 +180,8 @@ export default async function ArtworkPage({ params }: { params: Promise<{ id: st
             {/* Artwork Image */}
             <div className={`relative w-full lg:col-span-6`}>
               <div
-                className={`relative overflow-hidden lg:sticky lg:top-32 ${
-                  artwork.imageAspect === "landscape" ? "bg-transparent" : "bg-muted aspect-[4/5]"
-                }`}
+                className={`relative overflow-hidden lg:sticky lg:top-32 ${artwork.imageAspect === "landscape" ? "bg-transparent" : "bg-muted aspect-[4/5]"
+                  }`}
               >
                 {artwork.imageAspect === "landscape" ? (
                   <img
@@ -191,9 +205,9 @@ export default async function ArtworkPage({ params }: { params: Promise<{ id: st
             {/* Artwork Info */}
             <div className="lg:col-span-6 space-y-8 lg:py-8">
               <div>
-                <p className="text-sm tracking-widest uppercase text-muted-foreground mb-4">
-                  {artwork.year}
-                </p>
+                <h1 className="text-2xl md:text-3xl font-medium mb-4">
+                  {artwork.title}
+                </h1>
 
                 <p className="font-serif text-xl italic text-muted-foreground leading-relaxed">
                   {artwork.description}
@@ -228,9 +242,18 @@ export default async function ArtworkPage({ params }: { params: Promise<{ id: st
               <div className="h-px bg-border" />
 
               <div className="pt-4">
-                <p className="text-sm text-muted-foreground mb-4">
-                  {artwork.availabilityText}
-                </p>
+                <div className="mb-4">
+                  <p className="text-sm text-muted-foreground mb-1">
+                    {artwork.availabilityText}
+                  </p>
+                  {artwork.price && (
+                    <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
+                      Precio:
+                      {artwork.originalPrice && <span className="line-through opacity-70">{artwork.originalPrice}</span>}
+                      <span>{artwork.price}</span>
+                    </p>
+                  )}
+                </div>
                 <a
                   href={`mailto:daniescobarlopez@gmail.com?subject=Consulta sobre: ${encodeURIComponent(artwork.title)}`}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background text-sm tracking-wide transition-opacity hover:opacity-90"

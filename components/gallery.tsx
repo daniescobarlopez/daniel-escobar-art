@@ -23,7 +23,7 @@ const artworks: Artwork[] = [
   },
   {
     id: "casa-balcon",
-    title: "Casa con Balcón",
+    title: "Fachadas de piedra",
     description: "Arquitectura tradicional donde la luz y la sombra danzan sobre las fachadas de piedra.",
     image: "/MISIMAGENES/casa-balcon.jpg",
     year: "2025"
