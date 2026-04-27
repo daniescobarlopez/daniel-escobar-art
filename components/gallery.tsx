@@ -58,8 +58,15 @@ const artworks: Artwork[] = [
     year: "2025"
   },
   {
+    id: "Robe",
+    title: "Robe",
+    description: "Roberto Iniesta",
+    image: "/MISIMAGENES/Robe.jpg",
+    year: "2026"
+  },
+  {
     id: "casas-piedra",
-    title: "Carracedo de Compludo",
+    title: "Una historia que contar",
     description: "Una historia que contar.",
     image: "/MISIMAGENES/casas-piedra.jpg",
     year: "2025",

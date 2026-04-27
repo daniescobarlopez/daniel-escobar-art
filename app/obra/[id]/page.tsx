@@ -93,10 +93,11 @@ const artworks: Artwork[] = [
     image: "/MISIMAGENES/tejados-torre.jpg",
     year: "2025",
     technique: "Carboncillo sobre papel",
-    dimensions: "50 × 70 cm",
+    dimensions: "46 × 32 cm",
     availabilityText: "Obra disponible",
     price: "75€",
-    originalPrice: "150€"
+    originalPrice: "150€",
+    imageAspect: "landscape"
   },
   {
     id: "abuelo",
@@ -112,11 +113,25 @@ const artworks: Artwork[] = [
   },
   {
     id: "casas-piedra",
-    title: "Una historia que contar.",
-    description: "Una historia que contar.",
+    title: "Una historia que contar",
+    description: "Una historia que contar en Carracedo de Compludo",
     fullDescription: "En lo más recóndito del interior de León está Carracedo de Compludo.\n16 habitantes.\n9 hombres.\n7 mujeres.\n\nNos levantamos temprano. A cuatro kilómetros del pueblo, siguiendo un sendero apenas transitado, cubierto de maleza tan alta como yo, llegamos a la cascada de Gualtón. Uno de esos lugares que no se explican, se sienten. Sabes que son mágicos nada más pisarlos.\n\nDe vuelta, María cae por un terraplén lleno de zarzas. Su cabeza queda a la altura de mis pies. La saco de ahí casi como si arrancara una mandrágora de la tierra. Tuve miedo. Mucho miedo.\nPor suerte, solo fue un susto.\n\nRecorremos el pueblo en silencio. No se oye nada.\nAl llegar a la última casa, un mastín ladra. Una chica, sentada junto a él, me sonríe y me saluda. Se la veía feliz. Con su perro. En su aldea. Muy feliz. Me acordé del mío. Le echo tanto de menos.\n\nVolvemos a la furgoneta, cocinamos algo y descansamos antes de continuar el viaje.\nEntonces vemos una familia: una pareja con su hija y dos personas mayores, los abuelos.\n\n—Tened buen viaje.\n—Gracias.\n—Avisad cuando lleguéis.\n—Vale, mamá.\n—Venid más a menudo, que veamos más a la niña.\n—Vale.\n\nDos besos. Se marchan.\n\nEl abuelo se gira hacia su mujer y le dice, casi en un susurro:\n—Ahí se va todo lo que tienes. Todo.\n\nElla no contesta.\nÉl repite:\n—Ahí se va todo lo que tienes. Todo. Ni casas, ni tierras, ni nada.\n\n—Ya lo sé… ya lo sé —responde ella.\n\nY el pueblo vuelve a quedarse en silencio.\n\nA veces el tiempo no avisa.\nSe lleva a la gente, las voces, las costumbres… incluso los lugares.\nPensamos que siempre habrá un \"luego\", un \"otro día\", un \"cuando tengamos tiempo\".\nPero hay cosas —la familia, las relaciones, las amistades, la memoria, los pueblos— que, si no se cuidan a tiempo, se van sin hacer ruido.",
     image: "/MISIMAGENES/casas-piedra.jpg",
     year: "2025",
+    technique: "Carboncillo sobre papel",
+    dimensions: "46 × 32 cm",
+    availabilityText: "Obra disponible",
+    price: "50€",
+    originalPrice: "100€",
+    imageAspect: "landscape"
+  },
+  {
+    id: "Robe",
+    title: "Robe",
+    description: "Roberto Iniesta",
+    fullDescription: "Querido Robe, por aquí todo sigue igual o peor, seguimos matandonos entre nosotros. Pero todavía quedan personas soñando con ese mundo utópico.",
+    image: "/MISIMAGENES/Robe.jpg",
+    year: "2026",
     technique: "Carboncillo sobre papel",
     dimensions: "46 × 32 cm",
     availabilityText: "Obra disponible",
@@ -205,7 +220,7 @@ export default async function ArtworkPage({ params }: { params: Promise<{ id: st
             {/* Artwork Info */}
             <div className="lg:col-span-6 space-y-8 lg:py-8">
               <div>
-                <h1 className="text-2xl md:text-3xl font-medium mb-4">
+                <h1 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-6">
                   {artwork.title}
                 </h1>
 

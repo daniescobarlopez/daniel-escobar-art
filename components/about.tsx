@@ -8,7 +8,7 @@ export function About() {
           {/* Image */}
           <div className="relative aspect-[3/4] overflow-hidden">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_4752.JPG-MzBzQ9GMKIwy3u4tzr3840GRrSa9hj.jpeg"
+              src="/MISIMAGENES/yo.jpg"
               alt="Daniel Escobar López"
               fill
               className="object-cover"
@@ -21,43 +21,41 @@ export function About() {
               <p className="text-sm tracking-widest uppercase text-muted-foreground mb-4">
                 Sobre mí
               </p>
-              <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-8">
+              <h2 className="text-4xl md:text-5xl font-light text-foreground mb-8">
                 Un regreso al arte
               </h2>
             </div>
 
             <div className="space-y-6 text-lg leading-loose">
-              <p className="font-serif text-xl text-foreground/90 leading-relaxed">
+              <p className="text-xl text-foreground/90 leading-relaxed">
                 Dejé el arte hace años para seguir otro camino.
               </p>
               <p className="text-muted-foreground">
                 Pero no se me fue del corazón.
               </p>
-              <p className="font-serif text-xl text-foreground/90 leading-relaxed">
+              <p className="text-xl text-foreground/90 leading-relaxed">
                 Hoy vuelvo, sin prisas, sin miedo.<br />
                 Y quiero compartirlo contigo.
               </p>
-              
+
               <div className="pt-4 border-t border-border/50">
                 <p className="text-muted-foreground">
-                  No soy artista, ni estudié Arte.<br />
-                  Pero me apasiona.
+                  Me apasiona el arte<br />
                 </p>
                 <p className="text-muted-foreground mt-4">
                   Quiero volver a pintar, sí…<br />
                   Pero también entender qué es el arte, sus corrientes, sus genios, sus porqués.
                 </p>
               </div>
-              
-              <p className="font-serif text-lg italic text-foreground pt-4">
+
+              <p className="text-lg italic text-foreground pt-4">
                 Este es mi cuaderno de aprendizajes, errores y descubrimientos.<br />
-                ¿Aprendemos juntos?
               </p>
-              
+
               <p className="text-2xl">
                 🎨📚🖌️
               </p>
-              
+
               <p className="text-sm text-muted-foreground/70 pt-4">
                 Bachillerato de Artes · Instituto Las Américas
               </p>
