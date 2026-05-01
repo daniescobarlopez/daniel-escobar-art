@@ -135,8 +135,8 @@ const artworks: Artwork[] = [
     technique: "Carboncillo sobre papel",
     dimensions: "46 × 32 cm",
     availabilityText: "Obra disponible",
-    price: "50€",
-    originalPrice: "100€",
+    price: "80€",
+    originalPrice: "160€",
     imageAspect: "landscape"
   },
 ]

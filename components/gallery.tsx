@@ -11,9 +11,17 @@ export interface Artwork {
   image: string
   year: string
   isLandscape?: boolean
+  objectPosition?: string
 }
 
 const artworks: Artwork[] = [
+  {
+    id: "Robe",
+    title: "Robe",
+    description: "Roberto Iniesta",
+    image: "/MISIMAGENES/Robe.jpg",
+    year: "2026"
+  },
   {
     id: "Catedral",
     title: "Catedral de Santa María la Real de la Almudena",
@@ -58,19 +66,13 @@ const artworks: Artwork[] = [
     year: "2025"
   },
   {
-    id: "Robe",
-    title: "Robe",
-    description: "Roberto Iniesta",
-    image: "/MISIMAGENES/Robe.jpg",
-    year: "2026"
-  },
-  {
     id: "casas-piedra",
     title: "Una historia que contar",
     description: "Una historia que contar.",
     image: "/MISIMAGENES/casas-piedra.jpg",
     year: "2025",
-    isLandscape: true
+    isLandscape: true,
+    objectPosition: "object-left"
   },
   {
     id: "figura-estudio",
@@ -115,7 +117,7 @@ export function Gallery() {
                     alt={artwork.title}
                     fill
                     className={`object-cover transition-all duration-700 ${hoveredId === artwork.id ? "scale-105" : "scale-100"
-                      }`}
+                      } ${artwork.objectPosition || ""}`}
                     unoptimized
                   />
                   <div className={`absolute inset-0 bg-foreground/5 transition-opacity duration-500 ${hoveredId === artwork.id ? "opacity-0" : "opacity-100"
